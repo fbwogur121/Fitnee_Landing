@@ -212,3 +212,8 @@ footer {
 /***************************************
               promotion
 ****************************************/
+.promotion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
