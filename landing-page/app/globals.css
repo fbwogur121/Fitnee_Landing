@@ -37,6 +37,7 @@ body {
   --color-grey1: #f6f8fa;
   --color-grey2: #e8ebf0;
   --color-grey7: #595f72;
+  --color-grey8: #353c49;
   --color-grey9: #1a1e27;
   --color-purple: #8457f1;
   --color-black: #141414;
@@ -92,6 +93,62 @@ header {
   text-decoration: none;
 }
 
+.mobile{
+  display: none;
+}
+
+@media (max-width: 479px) {
+
+  header{
+    height: 56px;
+    padding: 0px 24px;
+  }
+
+  .nav-btn{
+    display: none;
+  }
+
+  .nav-menu{
+    display: block;
+  }
+
+  .sub-nav{
+    width: 100%;
+    height: 108px;
+    display: flex;
+    position: absolute;
+    top: 60px;
+    z-index: 1;
+  }
+
+  .sub-content{
+    margin: 4px 8px;
+    padding: 4px;
+    background-color: var(--color-white);
+    border-radius: 16px;
+    box-shadow: 0px 6px 12px 0px rgba(72, 90, 121, 0.14), 0px 3px 6px 0px rgba(72, 90, 121, 0.12);
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+  }
+
+  .aboutus-btn{
+    background-color: var(--color-white);
+    border: 1px solid var(--color-grey2);
+    color: var(--color-grey8);
+  }
+
+  .mobile-nav-btn{
+    text-align: center;
+    height: 31px;
+    line-height: 31px;
+  }
+
+  .mobile{
+    display: block;
+  }
+}
+
 .children {
   background-color: var(--color-grey1);
 }
@@ -126,27 +183,39 @@ footer {
 }
 
 .profile-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  column-gap: 21px;
+  display: grid;
   row-gap: 20px;
   margin-bottom: 181px;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media all and (min-width: 1441px){
+  .profile-container{
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+  }
 }
 
-@media all and (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .profile-container{
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 21px;
+  }
 }
 
-@media all and (min-width: 480px) and (max-width: 767px) {
+@media (min-width: 480px) and (max-width: 1023px) {
+  .profile-container{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 21px;
+  }
 }
 
 @media (max-width: 479px) {
+  .profile-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .title {
-    margin-top: 100px;
+    margin-top: 92px;
     font-size: 24px;
     font-weight: 700;
     color: var(--color-black);
@@ -184,6 +253,7 @@ footer {
   height: 178px;
   border-radius: 12px;
   margin-bottom: 16px;
+  position: relative;
 }
 
 .profile-name {
@@ -203,12 +273,6 @@ footer {
   display: flex;
   gap: 16px;
 }
-.profile-btn {
-  width: 24px;
-  height: 24px;
-  background-color: var(--color-grey2);
-}
-
 /***************************************
               promotion
 ****************************************/
