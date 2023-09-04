@@ -214,14 +214,14 @@ footer {
   color: var(--color-purple);
   font-weight: 700;
   font-size: 15px;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   margin-bottom: 20px;
 }
 
 .home-title{
   line-height: 44.8px;
   color: var(--color-black);
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -231,7 +231,7 @@ footer {
   color: var(--color-grey8); 
   font-size: 16px;
   font-weight: 300;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   line-height: 25.6px;
 }
 
