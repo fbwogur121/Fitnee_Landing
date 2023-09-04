@@ -161,6 +161,12 @@ footer {
   line-height: 64px;
   background-color: var(--color-grey2);
 }
+/***************************************
+              Home
+****************************************/
+.donut {
+  align-items: center;
+}
 
 /***************************************
               aboutus
