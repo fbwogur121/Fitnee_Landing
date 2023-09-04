@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -15,48 +15,47 @@ const inter = Inter({ subsets: ["latin"] });
 // };
 
 export default function RootLayout({ children }) {
-
-    const [isClicked, setIsClicked] = useState(false)
-    const clickMenu = () => setIsClicked(!isClicked)
+  const [isClicked, setIsClicked] = useState(false);
+  const clickMenu = () => setIsClicked(!isClicked);
 
   return (
     <html lang="en">
-        <body>
-            <header>
-                <Link href="/" className="left-container">
-                    <Image src={Logo} />
-                </Link>
-                <div className="right-container">
-                    <Link href ="/aboutus" className="aboutus-btn nav-btn">
-                        팀 피트니
-                    </Link>
-                    <Link href="/promotion" className="promotion-btn nav-btn">
-                        사전예약하기
-                    </Link>
-                    <Image
-                        src={isClicked? '/image/close.png' : '/image/hamburger.png'}
-                        className="nav-menu mobile"
-                        width={24}
-                        height={24}
-                        onClick={clickMenu}
-                    />
-                </div>
-            </header>
-            {
-                isClicked && (<div className="sub-nav mobile">
-                    <div className="sub-content">
-                        <Link href ="/aboutus" className="aboutus-btn mobile-nav-btn">
-                                팀 피트니
-                        </Link>
-                        <Link href="/promotion" className="promotion-btn mobile-nav-btn">
-                            사전예약하기
-                        </Link>
-                    </div>
-                </div>)
-            }
-            <div className="children">{children}</div>
-            <footer>Copyright @Fitnee All Rights Reserved</footer>
-        </body>
+      <body>
+        <header>
+          <Link href="/" className="left-container">
+            <Image src={Logo} />
+          </Link>
+          <div className="right-container">
+            <Link href="/aboutus" className="aboutus-btn nav-btn">
+              팀 피트니
+            </Link>
+            <Link href="/promotion" className="promotion-btn nav-btn">
+              사전예약하기
+            </Link>
+            <Image
+              src={isClicked ? "/image/close.png" : "/image/hamburger.png"}
+              className="nav-menu mobile"
+              width={24}
+              height={24}
+              onClick={clickMenu}
+            />
+          </div>
+        </header>
+        {isClicked && (
+          <div className="sub-nav mobile">
+            <div className="sub-content">
+              <Link href="/aboutus" className="aboutus-btn mobile-nav-btn">
+                팀 피트니
+              </Link>
+              <Link href="/promotion" className="promotion-btn mobile-nav-btn">
+                사전예약하기
+              </Link>
+            </div>
+          </div>
+        )}
+        <div className="children">{children}</div>
+        <footer>Copyright @Fitnee All Rights Reserved</footer>
+      </body>
     </html>
   );
 }
