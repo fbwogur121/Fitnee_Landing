@@ -46,6 +46,15 @@ export default function Promotion() {
         </p>
         <div>
           <input
+            type="tel"
+            name="tel"
+            placeholder="01012345678"
+            // value={email}
+            // onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
             type="checkbox"
             name="checkbox1"
             checked={checkbox1}
