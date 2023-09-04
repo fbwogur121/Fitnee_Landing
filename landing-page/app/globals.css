@@ -181,6 +181,8 @@ footer {
 .sub-title {
   margin-top: 44px;
   margin-bottom: 100px;
+  text-align: center;
+  line-height: 140%;
 }
 
 .profile-container {
@@ -194,12 +196,18 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 30px;
   }
+  .only-mini {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
   .profile-container {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 21px;
+  }
+  .only-mini {
+    display: none;
   }
 }
 
@@ -223,6 +231,7 @@ footer {
   }
 
   .sub-title {
+    margin-top: 22px;
     font-size: 15px;
     margin-bottom: 48px;
     padding: 0px 35px;
