@@ -83,7 +83,6 @@ export default function Home() {
       <div className="donut">
         <canvas ref={canvasRef} id="canvas" width={500} height={500} />
       </div>
-      <div className="threejs">threejs 들어갈 공간</div>
       <div className="home-main">
         <div className="first">
           <div className="first-text">

@@ -193,15 +193,13 @@ footer {
   background-color: var(--color-grey2);
 }
 /***************************************
-              Home
-****************************************/
-.donut {
-  align-items: center;
-}
-
-/***************************************
               home
 ****************************************/
+.donut {
+  display: flex;
+  justify-content: center;
+}
+
 .threejs{
   background-color: var(--color-grey7);
   width: 100%;

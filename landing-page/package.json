@@ -19,7 +19,6 @@
     "react-dom": "18.2.0",
     "react-three-fiber": "^6.0.13",
     "tailwindcss": "3.3.3",
-    "three": "^0.156.0",
     "three-mtl-loader": "^1.0.2",
     "three-obj-loader": "^1.1.3"
   },
