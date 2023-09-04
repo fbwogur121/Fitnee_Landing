@@ -1,35 +1,66 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 900;
+  font-style: normal;
+  src: url("/public/static/fonts/Pretendard-Black.otf") format("otf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-style: normal;
+  src: url("/public/static/fonts/Pretendard-ExtraBold.otf") format("otf");
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/public/static/fonts/Pretendard-Bold.otf") format("otf");
+}
 
-/* @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-} */
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-style: normal;
+  src: url("/public/static/fonts/Pretendard-SemiBold.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-style: normal;
+  src: url("/public/static/fonts/Pretendard-Medium.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/public/static/fonts/Pretendard-Regular.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-style: normal;
+  src: url("/public/static/fonts/Pretendard-Light.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 200;
+  font-style: normal;
+  src: url("/public/static/fonts/Pretendard-ExtraLight.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 100;
+  font-style: normal;
+  src: url("/public/static/fonts/Pretendard-Thin.otf") format("otf");
+}
+
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
 :root {
@@ -163,6 +194,151 @@ footer {
 }
 
 /***************************************
+              home
+****************************************/
+.threejs{
+  background-color: var(--color-grey7);
+  width: 100%;
+  height: 200px;
+}
+
+.home-main{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  background-color: var(--color-white);
+  width: 100%;
+}
+
+.point-text{
+  color: var(--color-purple);
+  font-weight: 700;
+  font-size: 15px;
+  font-family: Pretendard;
+  margin-bottom: 20px;
+}
+
+.home-title{
+  line-height: 44.8px;
+  color: var(--color-black);
+  font-family: Pretendard;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.home-subtitle{
+  color: var(--color-grey8); 
+  font-size: 16px;
+  font-weight: 300;
+  font-family: Pretendard;
+  line-height: 25.6px;
+}
+
+.first{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 165px;
+}
+.first-text{
+  margin-right: 200px;
+}
+.first-img-container{
+  display: flex;
+}
+
+.second{
+  margin-top: 230px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.third{
+  margin-top: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.third-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 90px;
+}
+.third-img-container{
+   display: flex;
+   align-items: flex-start;
+}
+
+.fourth{
+  margin-top: 200px;
+  position: relative;
+}
+.fourth-text{
+    margin-bottom: 41px;
+    margin-left: 457px;
+}
+.text-group{
+  display: flex;
+} 
+.fourth-img-container{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+.line{
+    width: 100%;
+    height: 248px;
+    background-color: var(--color-grey2);
+    margin-top: 197px;
+    margin-bottom: 283px;
+}
+#fourth-title{
+  margin-right: 147px;
+}
+#fourth-img{
+    margin-right: 35px;
+}
+
+.fifth{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 327px 446px;
+    column-gap: 16px;
+    row-gap: 16px;
+    margin-bottom: 628px;
+}
+.fifth-text{
+    margin-top: 28px;
+    margin-left: 56px;
+}
+#fifth-img{
+    border-radius: 20px;
+    box-shadow: 1px 12px 22px 0px rgba(72, 90, 121, 0.18), 0px 3px 22px 0px rgba(72, 90, 121, 0.15);
+}
+.graph{
+    background-color: var(--color-grey1);
+}
+
+.sixth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 300px;
+}
+.sixth-text{
+    margin-bottom: 80px;
+}
+#sixth-img{
+    border-radius: 40px;
+    box-shadow: 12px 12px 10px 0px rgba(72, 90, 121, 0.4), 0px 3px 22px 0px rgba(72, 90, 121, 0.15);
+}
+
+/***************************************
               aboutus
 ****************************************/
 .about-us {
@@ -292,65 +468,3 @@ footer {
   align-items: center;
 }
 
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 900;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Black.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 800;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-ExtraBold.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 700;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Bold.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 600;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-SemiBold.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 500;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Medium.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 400;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Regular.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 300;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Light.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 200;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-ExtraLight.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 100;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Thin.otf") format("otf");
-}
