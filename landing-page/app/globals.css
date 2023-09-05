@@ -252,12 +252,78 @@ footer {
   display: flex;
 }
 
-.second {
+.second{
   margin-top: 230px;
+  position: relative;
+}
+.second-main {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
+.flow-container{
+  overflow: hidden;
+}
+.flow-wrapper{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.second-gif-wrapper{
+  background-color: var(--color-grey2);
+  border-radius: 67px;
+  width: 320px;
+  height: 320px;
+}
+.flow-container{
+  overflow: hidden;
+}
+.flow-wrapper{
+  display: grid;
+  grid-auto-flow: column;
+  gap: 32px;
+}
+.second-banner{
+  display: grid;
+  grid-auto-flow: column;
+  gap: 32px;
+  margin-top: 157px;
+  position: relative;
+
+  &::before {
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #bbb;
+    z-index: 1;
+  }
+  &.original {
+    animation: infiniteAnimation1 60s linear infinite;
+  }
+  &.clone {
+    animation: infiniteAnimation2 60s linear infinite;
+  }
+}
+@keyframes infiniteAnimation1 {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes infiniteAnimation2 {
+  from { transform: translateX(0); }
+  to { transform: translateX(50%); }
+
+}
+
+
+
+
 
 .third {
   margin-top: 220px;
