@@ -16,14 +16,20 @@ export default function Promotion() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isSubmitEnabled) {
-      // 버튼이 활성화되었을 때만 요청을 보냅니다.
+      // email과 tel을 객체로 묶어서 전송합니다.
+      const data = {
+        email,
+        tel,
+      };
+
       const options = {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify(data), // email과 tel 객체를 전송합니다.
       };
+
       fetch("http://localhost:9999/topics", options)
         .then((res) => res.json())
         .then((result) => {
