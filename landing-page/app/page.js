@@ -9,7 +9,7 @@ import Home_Second from "@/component/home-second";
 import Home_Third from "@/component/home-third";
 import Home_Fourth from "@/component/home-fourth";
 import Home_Fifth from "@/component/home-fifth";
-import Home_Sixth from "@/component/home-six";
+import Home_Sixth from "@/component/home-sixth";
 
 export default function Home() {
   const canvasRef = useRef(null);
@@ -84,9 +84,9 @@ export default function Home() {
   return (
     <div>
       <div className="home-content"></div>
-      <div className="donut">
+      {/* <div className="donut">
         <canvas ref={canvasRef} id="canvas" width={500} height={500} />
-      </div>
+      </div> */}
       <div className="home-main">
             <Home_First/>
             <Home_Second/>

@@ -9,7 +9,7 @@ export default function Home_First(){
               <span>
                 간단한 질문만으로
                 <br />
-                맞춤 헬스 루틴을 만들 수 있다면
+                맞춤 헬스 루틴을 만들 수 있어요
               </span>
             </div>
             <div className="home-subtitle">

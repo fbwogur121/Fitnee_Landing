@@ -12,11 +12,9 @@ export default function FlowBanner(){
                     .map((value) => (
                         <div className="second-gif-wrapper">
                             <Image
-                                priority
                                 src={`/temp/${value}.png`}
-                                width={320}
-                                height={320}
-                                id="second-gif"
+                                fill
+                                style={{objectFit: 'contain'}}
                             />
                         </div>
                     ))
@@ -28,11 +26,9 @@ export default function FlowBanner(){
                     .map((value) => (
                         <div className="second-gif-wrapper">
                             <Image
-                                // priority
                                 src={`/temp/${value}.png`}
-                                width={320}
-                                height={320}
-                                id="second-gif"
+                                fill
+                                style={{objectFit: 'contain'}}
                             />
                         </div>
                     ))
