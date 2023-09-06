@@ -13,7 +13,7 @@ export default function FlowBanner(){
                         <div className="second-gif-wrapper">
                             <Image
                                 priority
-                                src={`/GIF/${value}.gif`}
+                                src={`/temp/${value}.png`}
                                 width={320}
                                 height={320}
                                 id="second-gif"
@@ -29,7 +29,7 @@ export default function FlowBanner(){
                         <div className="second-gif-wrapper">
                             <Image
                                 // priority
-                                src={`/GIF/${value}.gif`}
+                                src={`/temp/${value}.png`}
                                 width={320}
                                 height={320}
                                 id="second-gif"
