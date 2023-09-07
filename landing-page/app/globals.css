@@ -483,6 +483,7 @@ footer {
   justify-content: center;
   position: absolute;
   width: 100%;
+  padding-left: 25px;
 }
 .line {
   width: 100%;
@@ -550,7 +551,7 @@ footer {
 }
 #fifth-2 {
   width: 400px;
-  height: 252px;
+  height: 300px;
   order: 3;
   background-color: var(--color-grey1);
 }
@@ -587,6 +588,7 @@ footer {
     height: 208px;
     align-self: flex-start;
     margin-left: 24px;
+    margin-bottom: 20px;
     order: 2;
     box-shadow: 0.6px 7.2px 13.2px 0px rgba(72, 90, 121, 0.18),
     0px 1.8px 13.2px 0px rgba(72, 90, 121, 0.15);
