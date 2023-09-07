@@ -42,14 +42,16 @@ export default function Promotion() {
     <div className="promotion">
       <div className="promotion-title">fitnee 사전예약</div>
       <div className="promotion-sub-title">
-        런칭이 시작되면 작성해주신 메일 주소로 알림을 보내드려요
+        런칭이 시작되면 작성해주신 메일 주소로
+        <br />
+        알림을 보내드려요
       </div>
       <form className="form" onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <input
             type="email"
             name="email"
-            className="email-input" // 클래스 추가
+            className="input" // 클래스 추가
             placeholder="fitnee@gmail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -59,7 +61,7 @@ export default function Promotion() {
           <input
             type="tel"
             name="tel"
-            className="tel-input" // 클래스 추가
+            className="input" // 클래스 추가
             placeholder="01012345678"
             value={tel}
             onChange={(e) => setTel(e.target.value)}
