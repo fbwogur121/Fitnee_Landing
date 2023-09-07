@@ -192,20 +192,98 @@ footer {
   line-height: 64px;
   background-color: var(--color-grey2);
 }
+
 /***************************************
-              home
+              three.js
 ****************************************/
 .donut {
   display: flex;
   justify-content: center;
+  height: 500px;
 }
-
-.threejs {
-  background-color: var(--color-grey7);
-  width: 100%;
+#canvas {
+  position: absolute;
+  right: 20px;
+  width: 500px;
+  height: 500px;
+}
+.big-logo {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  width: 500px;
   height: 200px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
+@media all and (min-width: 1441px) {
+  #canvas {
+    position: absolute;
+    left: 800px;
+    width: 500px;
+    height: 500px;
+  }
+  .big-logo {
+    position: absolute;
+    left: 200px;
+    top: 250px;
+    width: 500px;
+    height: 200px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+}
+
+@media (min-width: 480px) and (max-width: 1023px) {
+  #canvas {
+    position: absolute;
+    right: 20px;
+    width: 500px;
+    height: 500px;
+  }
+  .big-logo {
+    position: absolute;
+    left: 50px;
+    top: 100px;
+    width: 500px;
+    height: 200px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .donut {
+    height: 400px;
+  }
+  #canvas {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 400px;
+  }
+  .big-logo {
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/***************************************
+              home
+****************************************/
 .home-main {
   display: flex;
   flex-direction: column;
