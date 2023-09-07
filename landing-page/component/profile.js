@@ -2,12 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function profile({info}){
-
-    const sendEmail = ()=>{
-        const email = 'amber0809@naver.com';
-        window.location.href = `mailto:${email}`;
-    }
-
     return(
         <div className="profile-wrapper">
             <div className="img-wrapper">
