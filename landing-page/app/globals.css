@@ -185,6 +185,7 @@ header {
 }
 
 .children {
+  min-height: 90vh;
   background-color: var(--color-grey1);
 }
 
