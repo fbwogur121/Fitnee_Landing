@@ -8,6 +8,7 @@ export default function Home_Fifth(){
                     src={"/phone/5_calendar.svg"}
                     fill
                     style={{objectFit: 'contain'}}
+                    alt="main page 5_calendar"
                 />
             </div>
             <div className="fifth-img-wrapper" id="fifth-2">
@@ -15,6 +16,7 @@ export default function Home_Fifth(){
                     src={"/phone/5_graph.png"}
                     fill
                     style={{objectFit: 'contain'}}
+                    alt="main page 5_graph"
                 />
             </div>
             <div className="fifth-img-wrapper" id="fifth-3">
@@ -22,6 +24,7 @@ export default function Home_Fifth(){
                     src={"/phone/5_analysis.svg"}
                     fill
                     style={{objectFit: 'contain'}}
+                    alt="main page 5_analysis"
                 />
             </div>
 

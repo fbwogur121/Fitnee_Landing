@@ -25,7 +25,7 @@ export default function Home_Sixth(){
                     src={"/phone/6_darkmode.png"}
                     fill
                     style={{objectFit: 'contain'}}
-                    quality={100}
+                    alt="main page 6_darkmode"
                 />
             </div>
         </div> 

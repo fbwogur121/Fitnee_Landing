@@ -15,6 +15,7 @@ export default function profile({info}){
                     src={`/image/${info.name}.png`}
                     fill
                     style={{objectFit:'contain'}}
+                    alt="about us - profile img"
                 />
             </div>
             <div className="profile-name">{info.name}</div>
@@ -26,6 +27,7 @@ export default function profile({info}){
                         width={24}
                         height={24}
                         className="profile-btn"
+                        alt="about us - email btn"
                     />
                 </Link>
                 {   
@@ -36,6 +38,7 @@ export default function profile({info}){
                             width={24}
                             height={24}
                             className="profile-btn"
+                            alt="about us - sns btn"
                         />
                     </Link>
                     :
@@ -49,6 +52,7 @@ export default function profile({info}){
                             width={24}
                             height={24}
                             className="profile-btn"
+                            alt="about us - site btn"
                         />
                     </Link>
                     :

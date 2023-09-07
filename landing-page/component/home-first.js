@@ -26,6 +26,7 @@ export default function Home_First(){
                     src={"/phone/1_1RM.png"}
                     fill
                     style={{ objectFit: 'contain' }}
+                    alt="main page 1_1RM"
                 />
             </div>
             <div className="first-img-wrapper" id="first-2">
@@ -33,6 +34,7 @@ export default function Home_First(){
                     src={"/phone/1_createRoutine.png"}
                     fill
                     style={{ objectFit: 'contain' }}
+                    alt="main page 1_createRoutine"
                 />
             </div>
           </div>
