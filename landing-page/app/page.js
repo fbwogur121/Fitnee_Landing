@@ -10,10 +10,12 @@ import Home_Third from "@/component/home-third";
 import Home_Fourth from "@/component/home-fourth";
 import Home_Fifth from "@/component/home-fifth";
 import Home_Sixth from "@/component/home-sixth";
+import Image from "next/image";
 
 export default function Home() {
   const canvasRef = useRef(null);
-  const mousePos = useRef({ x: 0, y: 0 });
+  ///////마우스로 조절///////
+  //const mousePos = useRef({ x: 0, y: 0 });
   useEffect(() => {
     if (canvasRef.current) {
       const scene = new THREE.Scene();
@@ -23,8 +25,25 @@ export default function Home() {
       });
 
       renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.shadowMap.enable = true;
       const camera = new THREE.PerspectiveCamera(30, 1);
       camera.position.set(0, 0, 300);
+
+      // 배경 평면 생성
+      const planeGeometry = new THREE.PlaneGeometry(1000, 1000);
+
+      // 배경 평면에 텍스처 매핑을 위한 재질 생성
+      const textureLoader = new THREE.TextureLoader();
+      const texture = textureLoader.load("/Group35798.png");
+      const planeMaterial = new THREE.MeshBasicMaterial({ map: texture });
+
+      // 배경 메시 생성
+      const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
+
+      // 카메라와 마우스 움직임과 동기화하기 위해 회전 설정
+      planeMesh.rotation.x = -Math.PI / 2;
+
+      scene.add(planeMesh);
 
       scene.background = new THREE.Color("#f8f6fa");
 
@@ -40,27 +59,25 @@ export default function Home() {
         color: "#f3f6fa",
         roughness: 0,
         matalness: 0.8,
+        transparent: true,
+        transmission: 0.9,
       });
 
-      const onWindowResize = () => {
-        // 카메라와 렌더러 업데이트
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-      };
-      window.addEventListener("resize", onWindowResize);
       const loader = new GLTFLoader();
 
-      canvasRef.current.addEventListener("mousemove", (event) => {
-        mousePos.current.x = (event.clientX / window.innerWidth) * Math.PI * 2;
-        mousePos.current.y =
-          -(event.clientY / window.innerHeight) * Math.PI * 2;
-      });
+      ///////마우스로 조절///////
+      // canvasRef.current.addEventListener("mousemove", (event) => {
+      //   mousePos.current.x = (event.clientX / window.innerWidth) * Math.PI * 2;
+      //   mousePos.current.y =
+      //     -(event.clientY / window.innerHeight) * Math.PI * 2;
+      // });
 
       loader.load("/circle.glb", (gltf) => {
         gltf.scene.traverse((child) => {
           if (child.isMesh) {
             child.material = material;
+            child.castShadow = true;
+            child.receiveShadow = true;
           }
         });
         scene.add(gltf.scene);
@@ -68,31 +85,45 @@ export default function Home() {
 
         function animate() {
           requestAnimationFrame(animate);
-          gltf.scene.rotation.z = mousePos.current.x;
-          gltf.scene.rotation.x = mousePos.current.y;
+          gltf.scene.rotation.x += 0.008;
+          gltf.scene.rotation.y += 0.003;
+          gltf.scene.rotation.z += 0.005;
+          ///////마우스로 조절///////
+          //gltf.scene.rotation.z = mousePos.current.x;
+          //gltf.scene.rotation.x = mousePos.current.y;
           renderer.render(scene, camera);
+          renderer.shadowMap.needsUpdate = true;
         }
         animate();
       });
     }
-    // return () => {
-    //   // 컴포넌트 언마운트 시 resize 이벤트 리스너 제거
-    //   window.removeEventListener("resize", onWindowResize);
-    // };
   }, [canvasRef]);
 
   return (
     <div>
       <div className="home-content"></div>
-      {/* <div className="donut">
+      <div className="donut">
         <canvas ref={canvasRef} id="canvas" width={500} height={500} />
-      </div> */}
+        <div className="big-logo">
+          <Image
+            src={"/image/BigLogo.png"}
+            fill
+            style={{
+              objectFit: "contain",
+              alignItems: "center",
+              padding: 20,
+            }}
+            quality={100}
+          />
+        </div>
+      </div>
       <div className="home-main">
             <Home_First/>
             <Home_Second/>
             <Home_Third/>
             <Home_Fourth/>
             <Home_Fifth/>
+            <div className="gradient"/>
             <Home_Sixth/>
       </div>
     </div>

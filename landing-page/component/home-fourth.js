@@ -10,7 +10,7 @@ export default function Home_Fourth(){
                 <div className="home-title" id="fourth-title">
                     <span>
                     운동 전 과정을
-                    <br />
+                    <br/>
                     트래킹하고 있어요
                     </span>
                 </div>
@@ -26,35 +26,36 @@ export default function Home_Fourth(){
         <div className="fourth-img-container">
             <div className="fourth-img-wrapper" id="fourth-img">
                 <Image
-                    src={"/phone/4_start.svg"}
+                    src={"/phone/4_start.png"}
                     fill
                     style={{ objectFit: 'contain' }}
+                    quality={100}
                 />
             </div>            
             <div className="fourth-img-wrapper" id="fourth-img">
                 <Image
-                    src={"/phone/4_timer.svg"}
+                    src={"/phone/4_timer.png"}
                     fill
                     style={{ objectFit: 'contain' }}
                 />
             </div>
             <div className="fourth-img-wrapper" id="fourth-img">
                 <Image
-                    src={"/phone/4_exercise.svg"}
+                    src={"/phone/4_exercise.png"}
                     fill
                     style={{ objectFit: 'contain' }}
                 />
             </div>
             <div className="fourth-img-wrapper" id="fourth-img">
                 <Image
-                    src={"/phone/4_finish.svg"}
+                    src={"/phone/4_finish.png"}
                     fill
                     style={{ objectFit: 'contain' }}
                 />
             </div>
             <div className="fourth-img-wrapper">
                 <Image 
-                    src={"/phone/4_analysis.svg"} 
+                    src={"/phone/4_analysis.png"} 
                     fill
                     style={{ objectFit: 'contain' }}
                 />
