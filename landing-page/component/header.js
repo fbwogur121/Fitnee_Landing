@@ -63,10 +63,10 @@ export default function Header() {
       {isClicked && (
         <div className="sub-nav mobile">
           <div className="sub-content">
-            <Link href="/aboutus" className="aboutus-btn mobile-nav-btn">
+            <Link onClick={clickMenu} href="/aboutus" className="aboutus-btn mobile-nav-btn">
               팀 피트니
             </Link>
-            <Link href="/promotion" className="promotion-btn mobile-nav-btn">
+            <Link onClick={clickMenu} href="/promotion" className="promotion-btn mobile-nav-btn">
               사전예약하기
             </Link>
           </div>
