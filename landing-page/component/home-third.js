@@ -21,25 +21,25 @@ export default function Home_Third(){
             </div>
           </div>
           <div className="third-img-container">
-            <div className="third-img-wrapper" id="third-img">
+            <div className="third-img-wrapper" >
                 <Image
-                    src={"/phone/3_list.svg"}
+                    src={"/phone/3_list.png"}
                     fill
                     style={{ objectFit: 'contain' }}
                 />
             </div>
             <div className="third-img-wrapper" id="third-img">
                 <Image
-                    src={"/phone/3_custom.svg"}
+                    src={"/phone/3_custom.png"}
                     fill
                     style={{ objectFit: 'contain' }}
                 />
             </div>
-            <div className="third-img-wrapper">
+            <div className="third-img-wrapper" id="third-img">
                 <Image 
-                    src={"/phone/3_edit.svg"} 
-                    width={220} 
-                    height={445} 
+                    src={"/phone/3_edit.png"} 
+                    fill
+                    style={{ objectFit: 'contain' }}
                 />
             </div>
 

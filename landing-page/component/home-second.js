@@ -10,6 +10,7 @@ export default function Home_Second(){
                         src={"/phone/2_mainScreen.png"}
                         fill
                         style={{ objectFit: 'contain'}}
+                        quality={100}
                     />
                 </div>  
                 <div className="second-text">

@@ -118,12 +118,13 @@ export default function Home() {
         </div>
       </div>
       <div className="home-main">
-        <Home_First />
-        <Home_Second />
-        <Home_Third />
-        <Home_Fourth />
-        <Home_Fifth />
-        <Home_Sixth />
+            <Home_First/>
+            <Home_Second/>
+            <Home_Third/>
+            <Home_Fourth/>
+            <Home_Fifth/>
+            <div className="gradient"/>
+            <Home_Sixth/>
       </div>
     </div>
   );

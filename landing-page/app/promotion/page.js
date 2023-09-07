@@ -31,9 +31,21 @@ export default function Promotion() {
       };
 
       fetch("http://localhost:9999/topics", options)
-        .then((res) => res.json())
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return res.json();
+        })
         .then((result) => {
           console.log(result);
+          alert("신청이 완료되었습니다."); // 알림창 띄우기
+        })
+        .catch((error) => {
+          console.error(
+            "There has been a problem with your fetch operation:",
+            error
+          );
         });
     }
   };
@@ -42,14 +54,16 @@ export default function Promotion() {
     <div className="promotion">
       <div className="promotion-title">fitnee 사전예약</div>
       <div className="promotion-sub-title">
-        런칭이 시작되면 작성해주신 메일 주소로 알림을 보내드려요
+        런칭이 시작되면 작성해주신 메일 주소로
+        <br />
+        알림을 보내드려요
       </div>
       <form className="form" onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <input
             type="email"
             name="email"
-            className="email-input" // 클래스 추가
+            className="input" // 클래스 추가
             placeholder="fitnee@gmail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -59,7 +73,7 @@ export default function Promotion() {
           <input
             type="tel"
             name="tel"
-            className="tel-input" // 클래스 추가
+            className="input" // 클래스 추가
             placeholder="01012345678"
             value={tel}
             onChange={(e) => setTel(e.target.value)}
@@ -69,9 +83,9 @@ export default function Promotion() {
           <div className="checkbox-container">
             <div className="checkbox" onClick={() => setCheckbox1(!checkbox1)}>
               {checkbox1 ? (
-                <Image src={Checked} width={26} height={26} alt="체크 이미지" />
+                <Image src={Checked} width={24} height={24} alt="체크 이미지" />
               ) : (
-                <Image src={NonChecked} width={26} height={26} />
+                <Image src={NonChecked} width={24} height={24} />
               )}
             </div>
             <label className="checkbox-label">개인정보 수집 및 목적</label>
@@ -82,9 +96,9 @@ export default function Promotion() {
           <div className="checkbox-container">
             <div className="checkbox" onClick={() => setCheckbox2(!checkbox2)}>
               {checkbox2 ? (
-                <Image src={Checked} width={26} height={26} alt="체크 이미지" />
+                <Image src={Checked} width={24} height={24} alt="체크 이미지" />
               ) : (
-                <Image src={NonChecked} width={26} height={26} />
+                <Image src={NonChecked} width={24} height={24} />
               )}
             </div>
             <label className="checkbox-label">마케팅 정보 수신 동의</label>

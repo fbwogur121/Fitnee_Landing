@@ -23,14 +23,14 @@ export default function Home_First(){
           <div className="first-img-container">
             <div className="first-img-wrapper" id="first-1">
                 <Image
-                    src={"/phone/1_1RM.svg"}
+                    src={"/phone/1_1RM.png"}
                     fill
                     style={{ objectFit: 'contain' }}
                 />
             </div>
             <div className="first-img-wrapper" id="first-2">
                 <Image
-                    src={"/phone/1_createRoutine.svg"}
+                    src={"/phone/1_createRoutine.png"}
                     fill
                     style={{ objectFit: 'contain' }}
                 />
