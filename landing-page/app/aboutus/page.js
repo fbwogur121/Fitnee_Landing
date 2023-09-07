@@ -16,7 +16,9 @@ export default function Home() {
       </div>
       <div className="profile-container">
         {info.map((info) => (
-          <Profile info={info} />
+          <div key={info.name}>
+            <Profile info={info} />
+          </div>
         ))}
       </div>
     </div>
