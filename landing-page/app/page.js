@@ -10,6 +10,7 @@ import Home_Third from "@/component/home-third";
 import Home_Fourth from "@/component/home-fourth";
 import Home_Fifth from "@/component/home-fifth";
 import Home_Sixth from "@/component/home-sixth";
+import Image from "next/image";
 
 export default function Home() {
   const canvasRef = useRef(null);
@@ -93,6 +94,7 @@ export default function Home() {
             <Home_Third/>
             <Home_Fourth/>
             <Home_Fifth/>
+            <div className="gradient"/>
             <Home_Sixth/>
       </div>
     </div>
