@@ -26,6 +26,7 @@ export default function Home_Third(){
                     src={"/phone/3_list.png"}
                     fill
                     style={{ objectFit: 'contain' }}
+                    alt="main page 3_list"
                 />
             </div>
             <div className="third-img-wrapper" id="third-img">
@@ -33,6 +34,7 @@ export default function Home_Third(){
                     src={"/phone/3_custom.png"}
                     fill
                     style={{ objectFit: 'contain' }}
+                    alt="main page 3_custom"
                 />
             </div>
             <div className="third-img-wrapper" id="third-img">
@@ -40,6 +42,7 @@ export default function Home_Third(){
                     src={"/phone/3_edit.png"} 
                     fill
                     style={{ objectFit: 'contain' }}
+                    alt="main page 3_edit"
                 />
             </div>
 

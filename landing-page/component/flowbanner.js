@@ -14,9 +14,9 @@ export default function FlowBanner(){
                             <Image
                                 src={`/temp/${value}.png`}
                                 fill
-                                priority
                                 quality={100}
                                 style={{objectFit: 'contain'}}
+                                alt="flow banner"
                             />
                         </div>
                     ))
@@ -30,9 +30,9 @@ export default function FlowBanner(){
                             <Image
                                 src={`/temp/${value}.png`}
                                 fill
-                                priority
                                 quality={100}
                                 style={{objectFit: 'contain'}}
+                                alt="flow banner"
                             />
                         </div>
                     ))

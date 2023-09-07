@@ -115,6 +115,7 @@ export default function Home() {
               // padding: 20,
             }}
             quality={100}
+            alt="logo 3D"
           />
         </div>
       </div>
