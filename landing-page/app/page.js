@@ -7,10 +7,12 @@ import { MeshStandardMaterial } from "three";
 import Link from "next/link";
 import Image from "next/image";
 import FlowBanner from "@/component/flowbanner";
+import "../public/static/fonts/style.css";
 
 export default function Home() {
   const canvasRef = useRef(null);
-  const mousePos = useRef({ x: 0, y: 0 });
+  ///////마우스로 조절///////
+  //const mousePos = useRef({ x: 0, y: 0 });
   useEffect(() => {
     if (canvasRef.current) {
       const scene = new THREE.Scene();
@@ -20,8 +22,25 @@ export default function Home() {
       });
 
       renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.shadowMap.enable = true;
       const camera = new THREE.PerspectiveCamera(30, 1);
       camera.position.set(0, 0, 300);
+
+      // 배경 평면 생성
+      const planeGeometry = new THREE.PlaneGeometry(1000, 1000);
+
+      // 배경 평면에 텍스처 매핑을 위한 재질 생성
+      const textureLoader = new THREE.TextureLoader();
+      const texture = textureLoader.load("/Group35798.png");
+      const planeMaterial = new THREE.MeshBasicMaterial({ map: texture });
+
+      // 배경 메시 생성
+      const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
+
+      // 카메라와 마우스 움직임과 동기화하기 위해 회전 설정
+      planeMesh.rotation.x = -Math.PI / 2;
+
+      scene.add(planeMesh);
 
       scene.background = new THREE.Color("#f8f6fa");
 
@@ -39,25 +58,20 @@ export default function Home() {
         matalness: 0.8,
       });
 
-      const onWindowResize = () => {
-        // 카메라와 렌더러 업데이트
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-      };
-      window.addEventListener("resize", onWindowResize);
       const loader = new GLTFLoader();
 
-      canvasRef.current.addEventListener("mousemove", (event) => {
-        mousePos.current.x = (event.clientX / window.innerWidth) * Math.PI * 2;
-        mousePos.current.y =
-          -(event.clientY / window.innerHeight) * Math.PI * 2;
-      });
+      ///////마우스로 조절///////
+      // canvasRef.current.addEventListener("mousemove", (event) => {
+      //   mousePos.current.x = (event.clientX / window.innerWidth) * Math.PI * 2;
+      //   mousePos.current.y =
+      //     -(event.clientY / window.innerHeight) * Math.PI * 2;
+      // });
 
       loader.load("/circle.glb", (gltf) => {
         gltf.scene.traverse((child) => {
           if (child.isMesh) {
             child.material = material;
+            child.castShadow = true;
           }
         });
         scene.add(gltf.scene);
@@ -65,24 +79,38 @@ export default function Home() {
 
         function animate() {
           requestAnimationFrame(animate);
-          gltf.scene.rotation.z = mousePos.current.x;
-          gltf.scene.rotation.x = mousePos.current.y;
+          gltf.scene.rotation.x += 0.008;
+          gltf.scene.rotation.y += 0.003;
+          gltf.scene.rotation.z += 0.005;
+          ///////마우스로 조절///////
+          //gltf.scene.rotation.z = mousePos.current.x;
+          //gltf.scene.rotation.x = mousePos.current.y;
           renderer.render(scene, camera);
+          renderer.shadowMap.needsUpdate = true;
         }
         animate();
       });
     }
-    // return () => {
-    //   // 컴포넌트 언마운트 시 resize 이벤트 리스너 제거
-    //   window.removeEventListener("resize", onWindowResize);
-    // };
   }, [canvasRef]);
 
   return (
     <div>
       <div className="home-content"></div>
       <div className="donut">
-        <canvas ref={canvasRef} id="canvas" width={500} height={500} />
+        <div className="canvas-container">
+          <canvas ref={canvasRef} id="canvas" width={500} height={500} />
+          <div>
+            <Image
+              src={"/image/BigLogo.png"}
+              fill
+              style={{
+                objectFit: "contain",
+              }}
+              quality={100}
+            />
+          </div>
+        </div>
+        {/* <canvas ref={canvasRef} id="canvas" width={500} height={500} /> */}
       </div>
       <div className="home-main">
         <div className="first">
@@ -106,8 +134,8 @@ export default function Home() {
           <div className="first-img-container">
             <Image
               src={"/phone/1_1RM.svg"}
-              width={240}
-              height={491}
+              width={375}
+              height={141}
               style={{ marginRight: 30, alignSelf: "flex-start" }}
             />
             <Image
@@ -120,27 +148,27 @@ export default function Home() {
         </div>
 
         <div className="second">
-            <div className="second-main">
-                <Image
-                    src={"/phone/2_mainScreen.svg"}
-                    width={383}
-                    height={531}
-                    style={{ marginRight: 30, alignSelf: "flex-start" }}
-                />
-                <div className="second-text">
-                    <div className="point-text">운동 사전</div>
-                    <div className="home-title" style={{ marginBottom: 8 }}>
-                    <span>캐릭터로 쉽게 배우는 운동자세</span>
-                    </div>
-                    <div className="home-subtitle">
-                    <span>
-                        30개의 캐릭터 모션을 통해 혼자서 감 잡기 어려웠던 운동 자세를
-                        재미있게 배울 수 있어요.
-                    </span>
-                    </div>
-                </div>
+          <div className="second-main">
+            <Image
+              src={"/phone/2_mainScreen.svg"}
+              width={383}
+              height={531}
+              style={{ marginRight: 30, alignSelf: "flex-start" }}
+            />
+            <div className="second-text">
+              <div className="point-text">운동 사전</div>
+              <div className="home-title" style={{ marginBottom: 8 }}>
+                <span>캐릭터로 쉽게 배우는 운동자세</span>
+              </div>
+              <div className="home-subtitle">
+                <span>
+                  30개의 캐릭터 모션을 통해 혼자서 감 잡기 어려웠던 운동 자세를
+                  재미있게 배울 수 있어요.
+                </span>
+              </div>
             </div>
-            <FlowBanner/>
+          </div>
+          <FlowBanner />
         </div>
 
         <div className="third">

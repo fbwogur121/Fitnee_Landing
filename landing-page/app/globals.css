@@ -87,7 +87,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  font-family: "Pretendard";
   height: 80px;
   background-color: var(--color-white);
   padding: 0px 10%;
@@ -109,7 +109,7 @@ header {
   background-color: var(--color-grey1);
   padding: 9px 16px;
   border-radius: 12px;
-
+  font-family: "Pretendard";
   font-weight: 600;
   color: var(--color-purple);
   text-decoration: none;
@@ -119,7 +119,7 @@ header {
   background-color: var(--color-grey9);
   padding: 9px 16px;
   border-radius: 12px;
-
+  font-family: "Pretendard";
   font-weight: 600;
   color: var(--color-white);
   text-decoration: none;
@@ -252,7 +252,7 @@ footer {
   display: flex;
 }
 
-.second{
+.second {
   margin-top: 230px;
   position: relative;
 }
@@ -264,29 +264,29 @@ footer {
   width: 100%;
   z-index: 1;
 }
-.flow-container{
+.flow-container {
   overflow: hidden;
 }
-.flow-wrapper{
+.flow-wrapper {
   display: flex;
   flex-wrap: nowrap;
 }
 
-.second-gif-wrapper{
+.second-gif-wrapper {
   background-color: var(--color-grey2);
   border-radius: 67px;
   width: 320px;
   height: 320px;
 }
-.flow-container{
+.flow-container {
   overflow: hidden;
 }
-.flow-wrapper{
+.flow-wrapper {
   display: grid;
   grid-auto-flow: column;
   gap: 32px;
 }
-.second-banner{
+.second-banner {
   display: grid;
   grid-auto-flow: column;
   gap: 32px;
@@ -312,18 +312,21 @@ footer {
   }
 }
 @keyframes infiniteAnimation1 {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 @keyframes infiniteAnimation2 {
-  from { transform: translateX(0); }
-  to { transform: translateX(50%); }
-
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
 }
-
-
-
-
 
 .third {
   margin-top: 220px;
