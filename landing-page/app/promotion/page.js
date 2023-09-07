@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Checked from "../../public/checked.svg";
 import NonChecked from "../../public/non-checked.svg";
+import axios from "axios";
 
 export default function Promotion() {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ export default function Promotion() {
 
   const isSubmitEnabled = email && checkbox1 && checkbox2 && tel;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const telRegex = /^[0-9]{11}$/;
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -25,36 +26,27 @@ export default function Promotion() {
         alert("유효한 이메일을 입력해주세요");
         return;
       }
-      const data = {
-        email,
-        tel,
-      };
-
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data), // email과 tel 객체를 전송합니다.
-      };
-
-      fetch("http://localhost:9999/topics", options)
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error("Network response was not ok");
+      try {
+        const response = await axios.post(
+          "https://gpthealth.shop/app/promotion",
+          {
+            email: email,
+            phoneNum: tel,
           }
-          return res.json();
-        })
-        .then((result) => {
-          console.log(result);
-          alert("신청이 완료되었습니다."); // 알림창 띄우기
-        })
-        .catch((error) => {
-          console.error(
-            "There has been a problem with your fetch operation:",
-            error
-          );
-        });
+        );
+
+        if (response.status === 200) {
+          console.log(response.data);
+          alert("신청이 완료되었습니다.");
+        } else {
+          throw new Error("Network response was not ok");
+        }
+      } catch (error) {
+        console.error(
+          "There has been a problem with your axios request:",
+          error
+        );
+      }
     }
   };
 
