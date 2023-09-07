@@ -2,12 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function profile({info}){
-
-    const sendEmail = ()=>{
-        const email = 'amber0809@naver.com';
-        window.location.href = `mailto:${email}`;
-    }
-
     return(
         <div className="profile-wrapper">
             <div className="img-wrapper">
@@ -15,6 +9,7 @@ export default function profile({info}){
                     src={`/image/${info.name}.png`}
                     fill
                     style={{objectFit:'contain'}}
+                    alt="about us - profile img"
                 />
             </div>
             <div className="profile-name">{info.name}</div>
@@ -26,6 +21,7 @@ export default function profile({info}){
                         width={24}
                         height={24}
                         className="profile-btn"
+                        alt="about us - email btn"
                     />
                 </Link>
                 {   
@@ -36,6 +32,7 @@ export default function profile({info}){
                             width={24}
                             height={24}
                             className="profile-btn"
+                            alt="about us - sns btn"
                         />
                     </Link>
                     :
@@ -49,6 +46,7 @@ export default function profile({info}){
                             width={24}
                             height={24}
                             className="profile-btn"
+                            alt="about us - site btn"
                         />
                     </Link>
                     :

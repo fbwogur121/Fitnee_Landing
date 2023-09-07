@@ -29,7 +29,7 @@ export default function Home_Fourth(){
                     src={"/phone/4_start.png"}
                     fill
                     style={{ objectFit: 'contain' }}
-                    quality={100}
+                    alt="main page 4_start"
                 />
             </div>            
             <div className="fourth-img-wrapper" id="fourth-img">
@@ -37,6 +37,7 @@ export default function Home_Fourth(){
                     src={"/phone/4_timer.png"}
                     fill
                     style={{ objectFit: 'contain' }}
+                    alt="main page 4_timer"
                 />
             </div>
             <div className="fourth-img-wrapper" id="fourth-img">
@@ -44,6 +45,7 @@ export default function Home_Fourth(){
                     src={"/phone/4_exercise.png"}
                     fill
                     style={{ objectFit: 'contain' }}
+                    alt="main page 4_exercise"
                 />
             </div>
             <div className="fourth-img-wrapper" id="fourth-img">
@@ -51,6 +53,7 @@ export default function Home_Fourth(){
                     src={"/phone/4_finish.png"}
                     fill
                     style={{ objectFit: 'contain' }}
+                    alt="main page 4_finish"
                 />
             </div>
             <div className="fourth-img-wrapper">
@@ -58,6 +61,7 @@ export default function Home_Fourth(){
                     src={"/phone/4_analysis.png"} 
                     fill
                     style={{ objectFit: 'contain' }}
+                    alt="main page 4_analysis"
                 />
             </div>
         </div>

@@ -1,72 +1,8 @@
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 900;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Black.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 800;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-ExtraBold.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 700;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Bold.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 600;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-SemiBold.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 500;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Medium.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 400;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Regular.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 300;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Light.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 200;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-ExtraLight.otf") format("otf");
-}
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 100;
-  font-style: normal;
-  src: url("/public/static/fonts/Pretendard-Thin.otf") format("otf");
-}
-
-/* @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"); */
-
 :root {
   --color-white: #fff;
   --color-grey1: #f6f8fa;
   --color-grey2: #e8ebf0;
+  --color-grey4: #c4c5d4;
   --color-grey7: #595f72;
   --color-grey8: #353c49;
   --color-grey9: #1a1e27;
@@ -77,7 +13,6 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Pretendard";
 }
 
 /***************************************
@@ -87,7 +22,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Pretendard";
+  font-weight: 600;
   height: 80px;
   background-color: var(--color-white);
   padding: 0px 10%;
@@ -95,7 +30,6 @@ header {
 
 .left-container {
   font-weight: 600;
-  font-family: "Pretendard";
   height: 24px;
   width: 84px;
   position: relative;
@@ -112,7 +46,6 @@ header {
   background-color: var(--color-grey1);
   padding: 9px 16px;
   border-radius: 12px;
-  font-family: "Pretendard";
   font-weight: 600;
   color: var(--color-purple);
   text-decoration: none;
@@ -122,7 +55,6 @@ header {
   background-color: var(--color-grey9);
   padding: 9px 16px;
   border-radius: 12px;
-  font-family: "Pretendard";
   font-weight: 600;
   color: var(--color-white);
   text-decoration: none;
@@ -195,6 +127,12 @@ footer {
   text-align: center;
   line-height: 64px;
   background-color: var(--color-grey2);
+  color: var(--color-grey7);
+  font-size: 13px;
+}
+.dark {
+  color: var(--color-grey4);
+  background-color: var(--color-black);
 }
 
 /***************************************
@@ -272,15 +210,15 @@ footer {
   }
   #canvas {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     z-index: 999;
   }
   .big-logo {
     position: relative;
-    width: 80%;
+    width: 90%;
     height: 100px;
-    margin-top: 20px;
+    margin-top: 40px;
     justify-content: center;
     align-items: center;
   }
@@ -299,13 +237,11 @@ footer {
   color: var(--color-purple);
   font-weight: 700;
   font-size: 15px;
-  font-family: "Pretendard";
   margin-bottom: 20px;
 }
 .home-title {
   line-height: 44.8px;
   color: var(--color-black);
-  font-family: "Pretendard";
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -314,7 +250,6 @@ footer {
   color: var(--color-grey8);
   font-size: 16px;
   font-weight: 300;
-  font-family: "Pretendard";
   line-height: 25.6px;
 }
 @media (max-width: 479px) {
@@ -325,6 +260,7 @@ footer {
     font-size: 20px;
     margin-bottom: 16px;
     line-height: 32px;
+    font-weight: 600;
   }
   .home-subtitle {
     font-size: 15px;
@@ -429,17 +365,6 @@ footer {
   gap: 32px;
   margin-top: 157px;
   position: relative;
-  /* &::before {
-    display: block;
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #bbb;
-    z-index: 1;
-  } */
 }
 .original {
   animation: infiniteAnimation1 60s linear infinite;
@@ -563,8 +488,6 @@ footer {
   display: flex;
   justify-content: center;
   position: absolute;
-  width: 100%;
-  padding-left: 25px;
 }
 .line {
   width: 100%;
@@ -580,6 +503,14 @@ footer {
   height: 488px;
   position: relative;
   margin-bottom: 20px;
+}
+
+@media (min-width: 1300px) {
+  .fourth-img-container {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 24px;
+  }
 }
 
 @media (max-width: 479px) {
@@ -652,6 +583,7 @@ footer {
   box-shadow: 0.6px 7.2px 13.2px 0px rgba(72, 90, 121, 0.18),
     0px 1.8px 13.2px 0px rgba(72, 90, 121, 0.15);
 }
+
 @media (max-width: 479px) {
   .fifth {
     display: flex;
@@ -676,7 +608,8 @@ footer {
   }
   #fifth-2 {
     width: 203px;
-    height: 137px;
+    height: 117px;
+    padding: 10px;
     margin-bottom: 20px;
     order: 4;
     align-self: center;
@@ -708,7 +641,6 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding-top: 100px; */
   padding-bottom: 300px;
   background-color: #1a1e27;
 }
@@ -721,8 +653,8 @@ footer {
 
 .sixth-img-wrapper {
   border-radius: 40px;
-  box-shadow: 12px 12px 10px 0px rgba(72, 90, 121, 0.4),
-    0px 3px 22px 0px rgba(72, 90, 121, 0.15);
+  box-shadow: 12px 12px 10px 0px rgba(20, 20, 20, 0.3),
+    0px 3px 22px 0px rgba(20, 20, 20, 0.15);
   position: relative;
   width: 220px;
   height: 445px;
@@ -887,7 +819,6 @@ footer {
   margin-bottom: 64px;
   text-align: center;
   line-height: 22.4px; /* 22.4px */
-  font-family: Pretendard-Medium;
 }
 .form {
   display: flex;
@@ -903,7 +834,6 @@ footer {
   justify-content: center;
   flex-shrink: 0;
   border: 0;
-  font-family: Pretendard;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -913,7 +843,6 @@ footer {
 
 .input::placeholder {
   color: var(--color-grey4, #c4c5d4);
-  font-family: Pretendard;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -953,13 +882,15 @@ footer {
   color: var(--greyscale-light-b-001, var(--greyscale-light-b-001, #141414));
   text-decoration: underline;
   text-underline-offset: 2px;
-  font-family: Pretendard;
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 25.5px */
   margin-left: 16px;
   margin-right: 4px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .submit-button {
@@ -973,18 +904,27 @@ footer {
   flex-shrink: 0;
   border: 0;
   border-radius: 12px;
-  font-family: Pretendard;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: 140%; /* 25.2px */
   margin-bottom: 146px;
+
+  &:hover {
+    cursor: pointer;
+  }
+  /* &:active {
+    opacity: 0.3;
+  } */
 }
 
 .checkbox {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .essential-box {
@@ -998,18 +938,63 @@ footer {
 
 .essential {
   color: var(--main-color-light-p-100, #8457f1);
-  font-family: Pretendard;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%; /* 22.4px */
 }
+.promotion-sub-title-mobile {
+  display: none;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  text-align: center;
+  line-height: 22.4px; /* 22.4px */
+}
+.modal-container {
+  /* 모달창 크기 */
+  width: 80%;
+  height: 80%;
 
+  /* 최상단 위치 */
+  z-index: 999;
+
+  /* 중앙 배치 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* 모달창 디자인 */
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  overflow: auto;
+}
+.modal-close {
+  /* position: absolute; */
+  left: 93%;
+  top: 4%;
+  width: 24px;
+  height: 24px;
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.modal-terms {
+  margin-top: 50px;
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-bottom: 50px;
+}
 @media (max-width: 479px) {
   .promotion-title {
     margin-top: 112px;
     color: var(--color-black);
-    font-family: Pretendard;
     font-size: 28px;
     font-style: normal;
     font-weight: 700;
@@ -1019,7 +1004,6 @@ footer {
     margin-bottom: 24px;
     color: var(--greyscale-light-g-007, #595f72);
     text-align: center;
-    font-family: Pretendard;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -1046,7 +1030,6 @@ footer {
     justify-content: center;
     flex-shrink: 0;
     border: 0;
-    font-family: Pretendard;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -1055,7 +1038,6 @@ footer {
 
   .input::placeholder {
     color: var(--color-grey4, #c4c5d4);
-    font-family: Pretendard;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -1072,7 +1054,6 @@ footer {
     flex-shrink: 0;
     border: 0;
     border-radius: 12px;
-    font-family: Pretendard;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -1082,7 +1063,6 @@ footer {
   .checkbox-label {
     color: var(--greyscale-light-b-001, var(--greyscale-light-b-001, #141414));
     text-decoration: underline;
-    font-family: Pretendard;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -1101,7 +1081,6 @@ footer {
 
   .essential {
     color: var(--main-color-light-p-100, #8457f1);
-    font-family: Pretendard;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -1111,5 +1090,24 @@ footer {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
+  }
+  .promotion-sub-title {
+    display: none;
+  }
+  .promotion-sub-title-mobile {
+    display: block;
+  }
+  .modal-close {
+    left: 85%;
+    top: 4%;
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      opacity: 0.5;
+    }
   }
 }

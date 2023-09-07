@@ -13,7 +13,7 @@ export default function Header(){
         <>
         <header>
             <Link href="/" className="left-container">
-                <Image src={'/logo.png'} fill style={{objectFit: 'contain'}} />
+                <Image src={'/logo.png'} fill style={{objectFit: 'contain'}} alt='tab bar logo'/>
             </Link>
             <div className="right-container">
                 <Link href="/aboutus" className="aboutus-btn nav-btn">
@@ -23,11 +23,12 @@ export default function Header(){
                 사전예약하기
                 </Link>
                 <Image
-                src={isClicked ? "/image/close.png" : "/image/hamburger.png"}
-                className="nav-menu mobile"
-                width={24}
-                height={24}
-                onClick={clickMenu}
+                    src={isClicked ? "/image/close.png" : "/image/hamburger.png"}
+                    className="nav-menu mobile"
+                    width={24}
+                    height={24}
+                    onClick={clickMenu}
+                    alt='tab bar menu'
                 />
             </div>
         </header>

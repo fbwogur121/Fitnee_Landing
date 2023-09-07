@@ -4,12 +4,25 @@ import { useState } from "react";
 import Checked from "../../public/checked.svg";
 import NonChecked from "../../public/non-checked.svg";
 import axios from "axios";
+import Modal from "@/component/modal";
+import Modal2 from "@/component/modal2";
 
 export default function Promotion() {
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
+  const [dataModal, setDataModal] = useState(false);
+  const [adModal, setAdModal] = useState(false);
+
+  const showDataModal = () => {
+    setDataModal(true);
+    console.log("데이터 모달 오픈");
+  };
+  const showAdModal = () => {
+    setAdModal(true);
+    console.log("광고 모달 오픈");
+  };
 
   const isSubmitEnabled = email && checkbox1 && checkbox2 && tel;
 
@@ -35,10 +48,12 @@ export default function Promotion() {
           }
         );
 
-        if (response.status === 200) {
+        if (response.data.code === 1000) {
           console.log(response.data);
           alert("신청이 완료되었습니다.");
           window.location = "/";
+        } else if (response.data.code === 903) {
+          alert(response.data.message);
         } else {
           throw new Error("Network response was not ok");
         }
@@ -55,6 +70,9 @@ export default function Promotion() {
     <div className="promotion">
       <div className="promotion-title">fitnee 사전예약</div>
       <div className="promotion-sub-title">
+        런칭이 시작되면 작성해주신 메일 주소로 알림을 보내드려요
+      </div>
+      <div className="promotion-sub-title-mobile">
         런칭이 시작되면 작성해주신 메일 주소로
         <br />
         알림을 보내드려요
@@ -86,10 +104,17 @@ export default function Promotion() {
               {checkbox1 ? (
                 <Image src={Checked} width={24} height={24} alt="체크 이미지" />
               ) : (
-                <Image src={NonChecked} width={24} height={24} />
+                <Image
+                  src={NonChecked}
+                  width={24}
+                  height={24}
+                  alt="체크 이미지"
+                />
               )}
             </div>
-            <label className="checkbox-label">개인정보 수집 및 목적</label>
+            <label className="checkbox-label" onClick={showDataModal}>
+              개인정보 수집 및 목적
+            </label>
             <div className="essential-box">
               <div className="essential">필수</div>
             </div>
@@ -99,15 +124,24 @@ export default function Promotion() {
               {checkbox2 ? (
                 <Image src={Checked} width={24} height={24} alt="체크 이미지" />
               ) : (
-                <Image src={NonChecked} width={24} height={24} />
+                <Image
+                  src={NonChecked}
+                  width={24}
+                  height={24}
+                  alt="체크 이미지"
+                />
               )}
             </div>
-            <label className="checkbox-label">마케팅 정보 수신 동의</label>
+            <label className="checkbox-label" onClick={showAdModal}>
+              마케팅 정보 수신 동의
+            </label>
             <div className="essential-box">
               <div className="essential">필수</div>
             </div>
           </div>
         </div>
+        {dataModal && <Modal setModalOpen={setDataModal} />}
+        {adModal && <Modal2 setModalOpen={setAdModal} />}
         <p>
           <input
             type="submit"
