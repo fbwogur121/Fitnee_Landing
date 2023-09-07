@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Close from "../public/close-circle.svg";
 
 export default function Modal({ setModalOpen }) {
   // 모달 끄기
@@ -11,12 +10,10 @@ export default function Modal({ setModalOpen }) {
     <div className="modal-container">
       <div
         className="modal-close"
-        style={{
-          position: "sticky",
-        }}
         onClick={closeModal}
       >
-        <Image src={Close} width={24} height={24} alt="닫기 이미지" />
+        <Image
+        src={'/image/close-circle.svg'} width={24} height={24} alt="닫기 이미지" />
       </div>
 
       <div

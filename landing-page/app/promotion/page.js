@@ -140,8 +140,16 @@ export default function Promotion() {
             </div>
           </div>
         </div>
-        {dataModal && <Modal setModalOpen={setDataModal} />}
-        {adModal && <Modal2 setModalOpen={setAdModal} />}
+        {dataModal && 
+          <div className="modal-wrapper">
+            <Modal setModalOpen={setDataModal} />
+          </div>
+        }
+        {adModal && 
+        <div className="modal-wrapper">
+          <Modal2 setModalOpen={setAdModal} />
+        </div>
+        }
         <p>
           <input
             type="submit"

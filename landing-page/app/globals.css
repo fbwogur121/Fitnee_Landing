@@ -43,11 +43,12 @@ header {
 }
 
 .aboutus-btn {
-  background-color: var(--color-grey1);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-grey2);
   padding: 9px 16px;
   border-radius: 12px;
   font-weight: 600;
-  color: var(--color-purple);
+  color: var(--color-grey8);
   text-decoration: none;
 }
 
@@ -128,6 +129,7 @@ footer {
   background-color: var(--color-grey2);
   color: var(--color-grey7);
   font-size: 13px;
+  font-weight: 500;
 }
 .dark {
   color: var(--color-grey4);
@@ -296,6 +298,7 @@ footer {
   .first {
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 100px;
   }
   .first-text {
     padding-left: 24px;
@@ -572,8 +575,8 @@ footer {
 }
 
 .fifth-text {
-  margin-top: 28px;
-  margin-left: 56px;
+  margin-top: 16px;
+  margin-left: 40px;
   order: 4;
 }
 .fifth-img-wrapper {
@@ -812,7 +815,6 @@ footer {
   color: var(--color-black);
   line-height: 67.2px; /* 67.2px */
 }
-
 .promotion-sub-title {
   margin-top: 8px;
   margin-bottom: 64px;
@@ -964,18 +966,38 @@ footer {
   transform: translate(-50%, -50%);
 
   /* 모달창 디자인 */
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 8px;
+  background-color: var(--color-white);
+  border-radius: 12px;
   overflow: auto;
+  overflow-y: scroll;
+}
+.modal-wrapper{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(11, 19, 30, 0.37);
+  z-index: 10;
+  backdrop-filter: blur(3px);
+}
+.modal-container::-webkit-scrollbar{
+  width: 18px;
+  height: 20px;
+}
+.modal-container::-webkit-scrollbar-thumb {
+  background: var(--color-grey2);
+  border-radius: 12px;
+  background-clip: padding-box;
+  border: 5px solid transparent;
 }
 .modal-close {
-  /* position: absolute; */
-  left: 93%;
-  top: 4%;
+  position: sticky;
   width: 24px;
   height: 24px;
-
+  top: 10px;
+  left: 98%;
   &:hover {
     cursor: pointer;
   }
@@ -984,11 +1006,12 @@ footer {
   }
 }
 
+
 .modal-terms {
-  margin-top: 50px;
   margin-left: 24px;
   margin-right: 24px;
   margin-bottom: 50px;
+  word-break: keep-all;
 }
 @media (max-width: 479px) {
   .promotion-title {
@@ -1083,7 +1106,7 @@ footer {
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: 140%; /* 22.4px */
+    line-height: 140%;
   }
   .checkbox {
     width: 24px;
@@ -1095,6 +1118,9 @@ footer {
   }
   .promotion-sub-title-mobile {
     display: block;
+  }
+  .modal-container{
+    height: 70%;
   }
   .modal-close {
     left: 85%;
@@ -1108,5 +1134,33 @@ footer {
     &:active {
       opacity: 0.5;
     }
+  }
+}
+
+
+
+
+
+@media (min-width: 1000px) and (max-width: 1400px){
+  .promotion-btn{
+    font-weight: 500;
+  }
+  .aboutus-btn{
+    font-weight: 500;
+  }
+  .home-title{
+    font-weight: 500;
+  }
+  .point-text{
+    font-weight: 400;
+  }
+  .profile-name{
+    font-weight: 500;
+  }
+  .title{
+    font-weight: 500;
+  }
+  .promotion-title{
+    font-weight: 600x;
   }
 }

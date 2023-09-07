@@ -29,8 +29,8 @@ export default function Home_Fifth(){
             </div>
 
             <div className="fifth-text">
-                <div className="point-text">마이페이지</div>
-                <div className="home-title">
+                <div className="point-text" style={{marginBottom: 10}}>마이페이지</div>
+                <div className="home-title" style={{lineHeight: 1.5, marginBottom: 10}}>
                     <span>
                         기록, 분석, 루틴 내용
                         <br />
