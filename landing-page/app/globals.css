@@ -87,7 +87,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  font-family: "Pretendard";
   height: 80px;
   background-color: var(--color-white);
   padding: 0px 10%;
@@ -112,7 +112,7 @@ header {
   background-color: var(--color-grey1);
   padding: 9px 16px;
   border-radius: 12px;
-
+  font-family: "Pretendard";
   font-weight: 600;
   color: var(--color-purple);
   text-decoration: none;
@@ -122,7 +122,7 @@ header {
   background-color: var(--color-grey9);
   padding: 9px 16px;
   border-radius: 12px;
-
+  font-family: "Pretendard";
   font-weight: 600;
   color: var(--color-white);
   text-decoration: none;
@@ -195,20 +195,98 @@ footer {
   line-height: 64px;
   background-color: var(--color-grey2);
 }
+
 /***************************************
-              home
+              three.js
 ****************************************/
 .donut {
   display: flex;
   justify-content: center;
+  height: 500px;
 }
-
-.threejs {
-  background-color: var(--color-grey7);
-  width: 100%;
+#canvas {
+  position: absolute;
+  right: 20px;
+  width: 500px;
+  height: 500px;
+}
+.big-logo {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  width: 500px;
   height: 200px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
+@media all and (min-width: 1441px) {
+  #canvas {
+    position: absolute;
+    left: 800px;
+    width: 500px;
+    height: 500px;
+  }
+  .big-logo {
+    position: absolute;
+    left: 200px;
+    top: 250px;
+    width: 500px;
+    height: 200px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+}
+
+@media (min-width: 480px) and (max-width: 1023px) {
+  #canvas {
+    position: absolute;
+    right: 20px;
+    width: 500px;
+    height: 500px;
+  }
+  .big-logo {
+    position: absolute;
+    left: 50px;
+    top: 100px;
+    width: 500px;
+    height: 200px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .donut {
+    height: 400px;
+  }
+  #canvas {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 400px;
+  }
+  .big-logo {
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/***************************************
+              home
+****************************************/
 .home-main {
   display: flex;
   flex-direction: column;
@@ -428,6 +506,7 @@ footer {
 #third-text {
   text-align: center;
 }
+
 .third-img-container {
   display: flex;
   align-items: flex-start;
@@ -560,6 +639,7 @@ footer {
   height: 194px;
   order: 4;
 }
+
 .fifth-text {
   margin-top: 28px;
   margin-left: 56px;
@@ -633,6 +713,7 @@ footer {
 .align {
   text-align: center;
 }
+
 .sixth-img-wrapper {
   border-radius: 40px;
   box-shadow: 12px 12px 10px 0px rgba(72, 90, 121, 0.4),
@@ -641,6 +722,7 @@ footer {
   width: 220px;
   height: 445px;
 }
+
 @media (max-width: 479px) {
   .sixth {
     padding-bottom: 138px;
@@ -863,6 +945,8 @@ footer {
 
 .checkbox-label {
   color: var(--greyscale-light-b-001, var(--greyscale-light-b-001, #141414));
+  text-decoration : underline;
+  text-underline-offset: 2px;
   font-family: Pretendard;
   font-size: 17px;
   font-style: normal;
@@ -991,6 +1075,7 @@ footer {
   }
   .checkbox-label {
     color: var(--greyscale-light-b-001, var(--greyscale-light-b-001, #141414));
+    text-decoration : underline;
     font-family: Pretendard;
     font-size: 15px;
     font-style: normal;
