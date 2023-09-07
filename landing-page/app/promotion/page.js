@@ -10,13 +10,21 @@ export default function Promotion() {
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
 
-  // email 입력 값이 있고, checkbox1 및 checkbox2가 모두 선택되어야 버튼이 활성화됩니다.
   const isSubmitEnabled = email && checkbox1 && checkbox2 && tel;
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const telRegex = /^[0-9]{11}$/;
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     if (isSubmitEnabled) {
-      // email과 tel을 객체로 묶어서 전송합니다.
+      if (!telRegex.test(tel)) {
+        alert("형식에 맞는 전화번호 11자리 를 입력해주세요 ex)01022223333");
+        return;
+      }
+      if (!emailRegex.test(email)) {
+        alert("유효한 이메일을 입력해주세요");
+        return;
+      }
       const data = {
         email,
         tel,

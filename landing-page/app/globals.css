@@ -813,7 +813,7 @@ footer {
 
 .input {
   display: flex;
-  width: 372px;
+  width: 606px;
   height: 36px;
   flex-direction: column;
   justify-content: center;
@@ -824,6 +824,7 @@ footer {
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 25.2px */
+  outline: none;
 }
 
 .input::placeholder {
