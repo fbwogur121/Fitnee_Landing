@@ -67,7 +67,7 @@
   --color-white: #fff;
   --color-grey1: #f6f8fa;
   --color-grey2: #e8ebf0;
-  --color-grey4: #C4C5D4;
+  --color-grey4: #c4c5d4;
   --color-grey7: #595f72;
   --color-grey8: #353c49;
   --color-grey9: #1a1e27;
@@ -198,7 +198,7 @@ footer {
   color: var(--color-grey7);
   font-size: 13px;
 }
-.dark{
+.dark {
   color: var(--color-grey4);
   background-color: var(--color-black);
 }
@@ -558,7 +558,6 @@ footer {
   display: flex;
   justify-content: center;
   position: absolute;
-
 }
 .line {
   width: 100%;
@@ -576,8 +575,8 @@ footer {
   margin-bottom: 20px;
 }
 
-@media (min-width: 1300px){
-  .fourth-img-container{
+@media (min-width: 1300px) {
+  .fourth-img-container {
     left: 50%;
     transform: translateX(-50%);
     margin-left: 24px;
@@ -1159,8 +1158,6 @@ footer {
   z-index: 999;
 
   /* 중앙 배치 */
-  /* top, bottom, left, right 는 브라우저 기준으로 작동한다. */
-  /* translate는 본인의 크기 기준으로 작동한다. */
   position: absolute;
   top: 50%;
   left: 50%;
