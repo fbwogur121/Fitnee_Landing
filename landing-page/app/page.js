@@ -112,7 +112,7 @@ export default function Home() {
             style={{
               objectFit: "contain",
               alignItems: "center",
-              padding: 20,
+              // padding: 20,
             }}
             quality={100}
           />
