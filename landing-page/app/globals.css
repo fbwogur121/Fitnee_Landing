@@ -271,15 +271,15 @@ footer {
   }
   #canvas {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     z-index: 999;
   }
   .big-logo {
     position: relative;
-    width: 80%;
+    width: 90%;
     height: 100px;
-    margin-top: 20px;
+    margin-top: 40px;
     justify-content: center;
     align-items: center;
   }
