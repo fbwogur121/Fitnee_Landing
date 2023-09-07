@@ -866,6 +866,8 @@ footer {
 
 .checkbox-label {
   color: var(--greyscale-light-b-001, var(--greyscale-light-b-001, #141414));
+  text-decoration : underline;
+  text-underline-offset: 2px;
   font-family: Pretendard;
   font-size: 17px;
   font-style: normal;
@@ -994,6 +996,7 @@ footer {
   }
   .checkbox-label {
     color: var(--greyscale-light-b-001, var(--greyscale-light-b-001, #141414));
+    text-decoration : underline;
     font-family: Pretendard;
     font-size: 15px;
     font-style: normal;
