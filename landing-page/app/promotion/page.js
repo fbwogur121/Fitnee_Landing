@@ -71,9 +71,9 @@ export default function Promotion() {
           <div className="checkbox-container">
             <div className="checkbox" onClick={() => setCheckbox1(!checkbox1)}>
               {checkbox1 ? (
-                <Image src={Checked} width={26} height={26} alt="체크 이미지" />
+                <Image src={Checked} width={24} height={24} alt="체크 이미지" />
               ) : (
-                <Image src={NonChecked} width={26} height={26} />
+                <Image src={NonChecked} width={24} height={24} />
               )}
             </div>
             <label className="checkbox-label">개인정보 수집 및 목적</label>
@@ -84,9 +84,9 @@ export default function Promotion() {
           <div className="checkbox-container">
             <div className="checkbox" onClick={() => setCheckbox2(!checkbox2)}>
               {checkbox2 ? (
-                <Image src={Checked} width={26} height={26} alt="체크 이미지" />
+                <Image src={Checked} width={24} height={24} alt="체크 이미지" />
               ) : (
-                <Image src={NonChecked} width={26} height={26} />
+                <Image src={NonChecked} width={24} height={24} />
               )}
             </div>
             <label className="checkbox-label">마케팅 정보 수신 동의</label>

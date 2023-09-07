@@ -578,6 +578,9 @@ footer {
 }
 
 .checkbox {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
 }
 
 .essential-box {
@@ -671,5 +674,37 @@ footer {
     font-weight: 600;
     line-height: 140%; /* 25.2px */
     margin-bottom: 146px;
+  }
+  .checkbox-label {
+    color: var(--greyscale-light-b-001, var(--greyscale-light-b-001, #141414));
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 25.5px */
+    margin-left: 8px;
+    margin-right: 4px;
+  }
+  .essential-box {
+    display: flex;
+    padding: 2px 8px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: var(--main-color-light-p-10-light, #f2eefd);
+  }
+
+  .essential {
+    color: var(--main-color-light-p-100, #8457f1);
+    font-family: Pretendard;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+  }
+  .checkbox {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
   }
 }
