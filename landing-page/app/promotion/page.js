@@ -3,50 +3,66 @@ import Image from "next/image";
 import { useState } from "react";
 import Checked from "../../public/checked.svg";
 import NonChecked from "../../public/non-checked.svg";
+import axios from "axios";
+import Modal from "@/component/modal";
+import Modal2 from "@/component/modal2";
 
 export default function Promotion() {
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
+  const [dataModal, setDataModal] = useState(false);
+  const [adModal, setAdModal] = useState(false);
 
-  // email 입력 값이 있고, checkbox1 및 checkbox2가 모두 선택되어야 버튼이 활성화됩니다.
+  const showDataModal = () => {
+    setDataModal(true);
+    console.log("데이터 모달 오픈");
+  };
+  const showAdModal = () => {
+    setAdModal(true);
+    console.log("광고 모달 오픈");
+  };
+
   const isSubmitEnabled = email && checkbox1 && checkbox2 && tel;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const telRegex = /^[0-9]{11}$/;
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     if (isSubmitEnabled) {
-      // email과 tel을 객체로 묶어서 전송합니다.
-      const data = {
-        email,
-        tel,
-      };
-
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data), // email과 tel 객체를 전송합니다.
-      };
-
-      fetch("http://localhost:9999/topics", options)
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error("Network response was not ok");
+      if (!telRegex.test(tel)) {
+        alert("형식에 맞는 전화번호 11자리 를 입력해주세요 ex)01022223333");
+        return;
+      }
+      if (!emailRegex.test(email)) {
+        alert("유효한 이메일을 입력해주세요");
+        return;
+      }
+      try {
+        const response = await axios.post(
+          "https://gpthealth.shop/app/promotion",
+          {
+            email: email,
+            phoneNum: tel,
           }
-          return res.json();
-        })
-        .then((result) => {
-          console.log(result);
-          alert("신청이 완료되었습니다."); // 알림창 띄우기
-        })
-        .catch((error) => {
-          console.error(
-            "There has been a problem with your fetch operation:",
-            error
-          );
-        });
+        );
+
+        if (response.data.code === 1000) {
+          console.log(response.data);
+          alert("신청이 완료되었습니다.");
+          window.location = "/";
+        } else if (response.data.code === 903) {
+          alert(response.data.message);
+        } else {
+          throw new Error("Network response was not ok");
+        }
+      } catch (error) {
+        console.error(
+          "There has been a problem with your axios request:",
+          error
+        );
+      }
     }
   };
 
@@ -54,6 +70,9 @@ export default function Promotion() {
     <div className="promotion">
       <div className="promotion-title">fitnee 사전예약</div>
       <div className="promotion-sub-title">
+        런칭이 시작되면 작성해주신 메일 주소로 알림을 보내드려요
+      </div>
+      <div className="promotion-sub-title-mobile">
         런칭이 시작되면 작성해주신 메일 주소로
         <br />
         알림을 보내드려요
@@ -85,10 +104,17 @@ export default function Promotion() {
               {checkbox1 ? (
                 <Image src={Checked} width={24} height={24} alt="체크 이미지" />
               ) : (
-                <Image src={NonChecked} width={24} height={24} />
+                <Image
+                  src={NonChecked}
+                  width={24}
+                  height={24}
+                  alt="체크 이미지"
+                />
               )}
             </div>
-            <label className="checkbox-label">개인정보 수집 및 목적</label>
+            <label className="checkbox-label" onClick={showDataModal}>
+              개인정보 수집 및 목적
+            </label>
             <div className="essential-box">
               <div className="essential">필수</div>
             </div>
@@ -98,15 +124,24 @@ export default function Promotion() {
               {checkbox2 ? (
                 <Image src={Checked} width={24} height={24} alt="체크 이미지" />
               ) : (
-                <Image src={NonChecked} width={24} height={24} />
+                <Image
+                  src={NonChecked}
+                  width={24}
+                  height={24}
+                  alt="체크 이미지"
+                />
               )}
             </div>
-            <label className="checkbox-label">마케팅 정보 수신 동의</label>
+            <label className="checkbox-label" onClick={showAdModal}>
+              마케팅 정보 수신 동의
+            </label>
             <div className="essential-box">
               <div className="essential">필수</div>
             </div>
           </div>
         </div>
+        {dataModal && <Modal setModalOpen={setDataModal} />}
+        {adModal && <Modal2 setModalOpen={setAdModal} />}
         <p>
           <input
             type="submit"

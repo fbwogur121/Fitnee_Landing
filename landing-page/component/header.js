@@ -15,6 +15,9 @@ export default function Header() {
           <Link href="/">
             <Image src={"/logo.png"} fill style={{ objectFit: "contain" }} />
           </Link>
+        </div>
+
+        <div className="right-container">
           <div className="icon-container">
             <Link
               href={"https://dis.qa/wMm"}
@@ -41,8 +44,6 @@ export default function Header() {
               />
             </Link>
           </div>
-        </div>
-        <div className="right-container">
           <Link href="/aboutus" className="aboutus-btn nav-btn">
             팀 피트니
           </Link>
@@ -55,6 +56,7 @@ export default function Header() {
             width={24}
             height={24}
             onClick={clickMenu}
+            alt="tab bar menu"
           />
         </div>
       </header>

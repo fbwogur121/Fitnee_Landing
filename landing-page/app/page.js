@@ -97,6 +97,7 @@ export default function Home() {
               alignItems: "center",
             }}
             quality={100}
+            alt="logo 3D"
           />
         </div>
       </div>
