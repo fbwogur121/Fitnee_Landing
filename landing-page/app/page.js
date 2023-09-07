@@ -4,10 +4,19 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as THREE from "three";
 import { useEffect, useRef } from "react";
 import { MeshStandardMaterial } from "three";
+<<<<<<< HEAD
 import Link from "next/link";
 import Image from "next/image";
 import FlowBanner from "@/component/flowbanner";
 import "../public/static/fonts/style.css";
+=======
+import Home_First from "@/component/home-first";
+import Home_Second from "@/component/home-second";
+import Home_Third from "@/component/home-third";
+import Home_Fourth from "@/component/home-fourth";
+import Home_Fifth from "@/component/home-fifth";
+import Home_Sixth from "@/component/home-sixth";
+>>>>>>> d273862eb7f1419e2dadb66680ad55dc1d22f2a4
 
 export default function Home() {
   const canvasRef = useRef(null);
@@ -96,6 +105,7 @@ export default function Home() {
   return (
     <div>
       <div className="home-content"></div>
+<<<<<<< HEAD
       <div className="donut">
         <div className="canvas-container">
           <canvas ref={canvasRef} id="canvas" width={500} height={500} />
@@ -321,6 +331,18 @@ export default function Home() {
             id="sixth-img"
           />
         </div>
+=======
+      {/* <div className="donut">
+        <canvas ref={canvasRef} id="canvas" width={500} height={500} />
+      </div> */}
+      <div className="home-main">
+            <Home_First/>
+            <Home_Second/>
+            <Home_Third/>
+            <Home_Fourth/>
+            <Home_Fifth/>
+            <Home_Sixth/>
+>>>>>>> d273862eb7f1419e2dadb66680ad55dc1d22f2a4
       </div>
     </div>
   );
