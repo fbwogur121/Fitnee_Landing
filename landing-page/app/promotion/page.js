@@ -38,6 +38,7 @@ export default function Promotion() {
         if (response.status === 200) {
           console.log(response.data);
           alert("신청이 완료되었습니다.");
+          window.location = "/";
         } else {
           throw new Error("Network response was not ok");
         }
