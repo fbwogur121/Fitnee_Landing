@@ -31,9 +31,21 @@ export default function Promotion() {
       };
 
       fetch("http://localhost:9999/topics", options)
-        .then((res) => res.json())
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return res.json();
+        })
         .then((result) => {
           console.log(result);
+          alert("신청이 완료되었습니다."); // 알림창 띄우기
+        })
+        .catch((error) => {
+          console.error(
+            "There has been a problem with your fetch operation:",
+            error
+          );
         });
     }
   };
