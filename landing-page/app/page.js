@@ -11,6 +11,7 @@ import Home_Fourth from "@/component/home-fourth";
 import Home_Fifth from "@/component/home-fifth";
 import Home_Sixth from "@/component/home-sixth";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const canvasRef = useRef(null);
@@ -30,24 +31,6 @@ export default function Home() {
       renderer.shadowMap.enable = true;
       const camera = new THREE.PerspectiveCamera(30, 1);
       camera.position.set(0, 0, 300);
-
-      // // 배경 평면 생성
-      // const planeGeometry = new THREE.PlaneGeometry(1000, 1000);
-
-      // // 배경 평면에 텍스처 매핑을 위한 재질 생성
-      // const textureLoader = new THREE.TextureLoader();
-      // const texture = textureLoader.load("/Group35798.png");
-      // const planeMaterial = new THREE.MeshBasicMaterial({ map: texture });
-
-      // // 배경 메시 생성
-      // const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
-
-      // // 카메라와 마우스 움직임과 동기화하기 위해 회전 설정
-      // planeMesh.rotation.x = -Math.PI / 2;
-
-      // scene.add(planeMesh);
-
-      //scene.background = new THREE.Color("#f8f6fa");
 
       const light1 = new THREE.DirectionalLight("#6d55ff", 5);
       light1.position.set(-100, 300, 0);
@@ -102,7 +85,7 @@ export default function Home() {
   }, [canvasRef]);
 
   return (
-    <div>
+    <div className="home-container">
       <div className="donut">
         <canvas ref={canvasRef} id="canvas" width={500} height={500} />
         <div className="big-logo">
@@ -112,12 +95,21 @@ export default function Home() {
             style={{
               objectFit: "contain",
               alignItems: "center",
-              // padding: 20,
             }}
             quality={100}
             alt="logo 3D"
           />
         </div>
+      </div>
+      <div className="arrow-container">
+        <Image
+          className="arrow"
+          src={"/image/arrow.png"}
+          width={82}
+          height={28}
+          style={{ justifyContent: "center", alignItems: "center" }}
+          quality={100}
+        />
       </div>
       <div className="home-main">
         <Home_First />
