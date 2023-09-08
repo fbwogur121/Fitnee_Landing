@@ -168,6 +168,22 @@ footer {
   padding-top: 210px;
 }
 
+#canvas {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  z-index: 99;
+}
+
+.big-logo {
+  width: 80%;
+  height: 400px;
+  position: relative;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
 .arrow-container {
   display: flex;
   justify-content: center;
