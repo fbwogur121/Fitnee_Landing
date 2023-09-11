@@ -53,6 +53,7 @@ export const info = [
         name: '박해승',
         position: 'Backend',
         email: '2001phs92@gmail.com',
+        sns: 'https://www.instagram.com/hae_s_21/',
         site: 'https://github.com/parkhs21'
     },
 ]
