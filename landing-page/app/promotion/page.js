@@ -24,7 +24,7 @@ export default function Promotion() {
     console.log("광고 모달 오픈");
   };
 
-  const isSubmitEnabled = email && checkbox1 && checkbox2 && tel;
+  const isSubmitEnabled = email && checkbox1 && tel;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -136,7 +136,7 @@ export default function Promotion() {
               마케팅 정보 수신 동의
             </label>
             <div className="essential-box">
-              <div className="essential">필수</div>
+              <div className="essential">선택</div>
             </div>
           </div>
         </div>
