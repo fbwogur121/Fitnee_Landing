@@ -31,9 +31,9 @@ header {
 .icon-container {
   display: flex;
   justify-content: center;
-  margin-right: 5px;
+  margin-right: 13px;
   margin-top: 4px;
-  gap: 10px;
+  gap: 16px;
 }
 
 .left-container {
@@ -163,13 +163,32 @@ footer {
 .donut {
   display: flex;
   justify-content: center;
+  height: 900px;
+  align-items: center;
+  padding-top: 210px;
+}
+
+#canvas {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  z-index: 99;
+}
+
+.big-logo {
+  width: 80%;
+  height: 400px;
+  position: relative;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .arrow-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 250px;
   position: relative;
   animation: floatingAnimation 1.7s ease-in-out infinite;
 }
@@ -195,7 +214,8 @@ footer {
 
 @media all and (min-width: 1441px) {
   .donut {
-    height: 400px;
+    height: 600px;
+    padding-top: 0;
   }
   #canvas {
     position: absolute;
@@ -331,7 +351,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 165px;
+  margin-top: 300px;
 }
 .first-text {
   margin-right: 200px;
@@ -887,7 +907,7 @@ footer {
 
 .input {
   display: flex;
-  width: 606px;
+  width: 590px;
   height: 36px;
   flex-direction: column;
   justify-content: center;
@@ -1029,7 +1049,7 @@ footer {
   overflow: auto;
   overflow-y: scroll;
 }
-.modal-wrapper{
+.modal-wrapper {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -1040,7 +1060,7 @@ footer {
   z-index: 10;
   backdrop-filter: blur(3px);
 }
-.modal-container::-webkit-scrollbar{
+.modal-container::-webkit-scrollbar {
   width: 18px;
   height: 20px;
 }
@@ -1063,8 +1083,11 @@ footer {
     opacity: 0.5;
   }
 }
-
-
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .modal-terms {
   margin-left: 24px;
   margin-right: 24px;
@@ -1098,7 +1121,8 @@ footer {
     gap: 10px;
     flex-shrink: 0;
     border-radius: 8px;
-    border: 1px solid var(--color-grey2, #e8ebf0);
+    border: 2px solid var(--color-grey2, #e8ebf0);
+    /* outline: ; */
     background: var(--color-white, #fff);
     margin-bottom: 8px;
   }
@@ -1177,7 +1201,7 @@ footer {
   .promotion-sub-title-mobile {
     display: block;
   }
-  .modal-container{
+  .modal-container {
     height: 70%;
   }
   .modal-close {
@@ -1195,30 +1219,26 @@ footer {
   }
 }
 
-
-
-
-
-@media (min-width: 1000px) and (max-width: 1400px){
-  .promotion-btn{
+@media (min-width: 1000px) and (max-width: 1400px) {
+  .promotion-btn {
     font-weight: 500;
   }
-  .aboutus-btn{
+  .aboutus-btn {
     font-weight: 500;
   }
-  .home-title{
+  .home-title {
     font-weight: 500;
   }
-  .point-text{
+  .point-text {
     font-weight: 400;
   }
-  .profile-name{
+  .profile-name {
     font-weight: 500;
   }
-  .title{
+  .title {
     font-weight: 500;
   }
-  .promotion-title{
+  .promotion-title {
     font-weight: 600;
   }
 }
