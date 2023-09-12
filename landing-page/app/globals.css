@@ -536,9 +536,6 @@ footer {
   height: 487px;
   position: relative;
 }
-/* #third-img{
-  margin-right: 26px;
-} */
 @media (max-width: 479px) {
   .third {
     margin-top: 160px;
@@ -557,9 +554,6 @@ footer {
     width: 220px;
     height: 420px;
   }
-  /* #third-img{
-    margin-left: -10px;
-  } */
 }
 
 .fourth {
@@ -597,15 +591,16 @@ footer {
   position: relative;
   margin-bottom: 20px;
 }
-
 @media (min-width: 1300px) {
+  .fourth{
+  }
+
   .fourth-img-container {
     left: 50%;
     transform: translateX(-50%);
     margin-left: 24px;
   }
 }
-
 @media (max-width: 479px) {
   .fourth {
     display: flex;
