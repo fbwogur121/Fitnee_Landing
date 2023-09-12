@@ -86,31 +86,35 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      <div className="donut">
-        <canvas ref={canvasRef} id="canvas" width={500} height={500} />
-        <div className="big-logo">
+      <div className="donut-container">
+        <div className="donut">
+          <canvas ref={canvasRef} id="canvas" width={500} height={500} />
+          <div className="big-logo">
+            <Image
+              src={"/BigLogo.svg"}
+              fill
+              style={{
+                objectFit: "contain",
+                alignItems: "center",
+              }}
+              quality={100}
+              alt="logo 3D"
+            />
+          </div>
+        </div>
+        <div className="arrow-container">
           <Image
-            src={"/BigLogo.svg"}
-            fill
-            style={{
-              objectFit: "contain",
-              alignItems: "center",
-            }}
+            className="arrow"
+            src={"/image/arrow.png"}
+            width={82}
+            height={28}
+            style={{ justifyContent: "center", alignItems: "center" }}
             quality={100}
-            alt="logo 3D"
           />
         </div>
       </div>
-      <div className="arrow-container">
-        <Image
-          className="arrow"
-          src={"/image/arrow.png"}
-          width={82}
-          height={28}
-          style={{ justifyContent: "center", alignItems: "center" }}
-          quality={100}
-        />
-      </div>
+
+
       <div className="home-main">
         <Home_First />
         <Home_Second />

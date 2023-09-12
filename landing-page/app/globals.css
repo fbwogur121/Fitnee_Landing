@@ -160,12 +160,19 @@ footer {
   background-color: var(--color-white);
 }
 
+.donut-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .donut {
   display: flex;
   justify-content: center;
   height: 900px;
+  width: 80%;
   align-items: center;
-  padding-top: 210px;
 }
 
 #canvas {
@@ -182,13 +189,13 @@ footer {
   margin-top: 20px;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 .arrow-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 250px;
   position: relative;
   animation: floatingAnimation 1.7s ease-in-out infinite;
 }
@@ -213,8 +220,13 @@ footer {
 }
 
 @media all and (min-width: 1441px) {
+  .donut-container{
+    height: calc(100vh - 80px);
+  }
+
   .donut {
     height: 600px;
+    width: 80vw;
     padding-top: 0;
   }
   #canvas {
@@ -234,6 +246,10 @@ footer {
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
+  .donut-container{
+    height: calc(100vh - 80px);
+  }
+
   .donut {
     height: 300px;
   }
@@ -245,11 +261,7 @@ footer {
   }
   .big-logo {
     position: relative;
-    width: 80%;
     height: 300px;
-    margin-top: 20px;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -276,6 +288,7 @@ footer {
 @media (max-width: 479px) {
   .donut {
     height: 100px;
+    margin-top: 120px;
   }
   #canvas {
     position: absolute;
