@@ -6,6 +6,12 @@ export const info = [
         site: 'https://github.com/NeoSelf1'
     },
     {
+        name: '한진규',
+        position: 'Plan',
+        email: '98whitetiger@naver.com',
+        sns: 'https://www.instagram.com/jin_kyuhan'
+    },
+    {
         name: '박민',
         position: 'Product Design',
         email: 'bluebell9803@naver.com',
