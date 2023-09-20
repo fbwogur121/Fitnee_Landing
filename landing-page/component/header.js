@@ -32,7 +32,9 @@ export default function Header() {
               />
             </Link>
             <Link
-              href={"https://www.instagram.com/fitnee.official/"}
+              href={
+                "https://instagram.com/fitnee.official?igshid=OGQ5ZDc2ODk2ZA=="
+              }
               rel="noopener noreferrer"
               target="_blank"
             >
