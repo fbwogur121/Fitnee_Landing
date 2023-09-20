@@ -9,13 +9,13 @@ export const info = [
         name: '한진규',
         position: 'Plan',
         email: '98whitetiger@naver.com',
-        sns: 'https://www.instagram.com/jin_kyuhan'
+        sns: 'https://instagram.com/jin_kyuhan?igshid=OGQ5ZDc2ODk2ZA=='
     },
     {
         name: '박민',
         position: 'Product Design',
         email: 'bluebell9803@naver.com',
-        sns: 'https://instagram.com/minn.work?igshid=YTQwZjQ0NmI0OA==',
+        sns: 'https://instagram.com/minimin_9803?igshid=OGQ5ZDc2ODk2ZA==',
         site: 'https://www.linkedin.com/in/chloe-park-61320025a/'
     },
     {
@@ -59,7 +59,7 @@ export const info = [
         name: '박해승',
         position: 'Backend',
         email: '2001phs92@gmail.com',
-        sns: 'https://www.instagram.com/hae_s_21/',
+        sns: 'https://instagram.com/hae_s_21?igshid=OGQ5ZDc2ODk2ZA==',
         site: 'https://github.com/parkhs21'
     },
 ]
