@@ -49,13 +49,6 @@ export const info = [
         site: 'https://github.com/fbwogur121'
     },
     {
-        name: '박준규',
-        position: 'Backend',
-        email: 'junju404@naver.com',
-        sns: 'https://www.instagram.com/jun9.u/',
-        site: 'https://bush-candle-721.notion.site/ParkJunGyu-5403d2f59e104991adbf1888052ddfb2?pvs=4'
-    },
-    {
         name: '박해승',
         position: 'Backend',
         email: '2001phs92@gmail.com',
