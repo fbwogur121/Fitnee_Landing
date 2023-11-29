@@ -10,7 +10,7 @@ const myFont = localFont({
  })
 
 export const metadata = {
-  title: "Fitnee",
+  title: "fitnee",
   description: "피트니 fitnee 공식 사이트입니다.",
 };
 
