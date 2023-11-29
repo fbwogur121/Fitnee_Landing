@@ -20,9 +20,10 @@ export default function Header() {
         <div className="right-container">
           <div className="icon-container">
             <Link
-              href={"https://dis.qa/wMm"}
-              rel="noopener noreferrer"
-              target="_blank"
+              // href={"https://dis.qa/wMm"}
+              href={""}
+              // rel="noopener noreferrer"
+              // target="_blank"
             >
               <Image
                 src="/image/site.png"
@@ -32,11 +33,14 @@ export default function Header() {
               />
             </Link>
             <Link
+              // href={
+              //   "https://instagram.com/fitnee.official?igshid=OGQ5ZDc2ODk2ZA=="
+              // }
               href={
-                "https://instagram.com/fitnee.official?igshid=OGQ5ZDc2ODk2ZA=="
+                ""
               }
-              rel="noopener noreferrer"
-              target="_blank"
+              // rel="noopener noreferrer"
+              // target="_blank"
             >
               <Image
                 src="/image/sns.png"
@@ -46,7 +50,8 @@ export default function Header() {
               />
             </Link>
           </div>
-          <Link href="/aboutus" className="aboutus-btn nav-btn">
+          {/* <Link href="/aboutus" className="aboutus-btn nav-btn"> */}
+          <Link href="" className="aboutus-btn nav-btn">
             팀 피트니
           </Link>
           <Link href="/promotion" className="promotion-btn nav-btn">
@@ -67,7 +72,8 @@ export default function Header() {
           <div className="sub-content">
             <Link
               onClick={clickMenu}
-              href="/aboutus"
+              // href="/aboutus"
+              href=""
               className="aboutus-btn mobile-nav-btn"
             >
               팀 피트니
